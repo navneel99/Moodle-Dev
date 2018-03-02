@@ -18,7 +18,7 @@ echo "Couldn't connect Database.";
 </head>
 <body>
 <h1>Check Messages</h1>
-<p><i>Please note that the most recent messages are at the top. </i></p>
+<p><i>Please note that the most recent messages are at the <u>bottom</u>. </i></p>
 
 <?php
 $name=$_SESSION['name'];
@@ -49,5 +49,7 @@ echo " $message<br><br><br>";
 }
 
 ?>
+
+<a href="/Moodle/studwelcome.php"><p align='right'>Go Back</p></a>
 </body>
 </html>

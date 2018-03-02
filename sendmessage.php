@@ -39,9 +39,9 @@ $ret=mysqli_query($con,$sql);
 <form action="<?php $_PHP_SELF  ?>" method="POST">
 
 <input type="text" name="sendmessage" size=100>
-<input type="submit">
+<input type="submit" value="Send">
 </form>
-<a href="/Moodle/profwelcome.php">Go Back </a>
+<a href="/Moodle/profwelcome.php"><p align="right">Go Back </p></a>
 </body>
 
 </html>

@@ -53,7 +53,7 @@ $ret2=mysqli_query($con,$sql);
 <br>
 <form action="<?php $_PHP_SELF ?>" method="POST">
 <input type="text" name="delcourse">
-<input type="submit">
+<input type="submit" value="Confirm">
 </form>
 <a href="\Moodle\studwelcome.php"><p align='right'>Go Back</p></a>
 

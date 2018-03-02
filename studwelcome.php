@@ -46,7 +46,7 @@ exit();
 <h1 align='center' font face="Comic Sans MS"><b> Mini Moodle<b></h1>
 <p> Here you can check for available courses, drop some courses and also check various messages from professors </p>
 <?php
-echo "Hello $name!" ;
+echo "<center>Hello $name!</center><br><br>" ;
 echo "These are the courses you are currently studying:<br>";
 $sql="SELECT stud_id,name,stud_psswd,course_picked,time_picked,course_removed,time_removed from studs where name='$name'";
 $retval=mysqli_query($con,$sql);

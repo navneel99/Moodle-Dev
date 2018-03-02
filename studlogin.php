@@ -55,6 +55,6 @@ mysqli_close($con);
 Enter your ID and Password <br><br>
 <input type='text' name="ID" value="Enter ID"><br>
 <input type='password' name="password" value="Enter password"><br>
-<input type='submit'>
+<input type='submit' value="Log-In">
 </body>
 </html>
