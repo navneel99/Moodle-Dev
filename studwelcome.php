@@ -48,12 +48,15 @@ exit();
 <?php
 echo "<center>Hello $name!</center><br><br>" ;
 echo "These are the courses you are currently studying:<br>";
-$sql="SELECT stud_id,name,stud_psswd,course_picked,time_picked,course_removed,time_removed from studs where name='$name'";
+$sql="SELECT stud_id,stud_psswd,name,course_picked,time_picked,course_removed,time_removed from studs where name='$name'";
 $retval=mysqli_query($con,$sql);
 while ($row=mysqli_fetch_assoc($retval)){
 $currcourse=$row['course_picked'];
 if ($currcourse){
 echo "--> $currcourse<br>";
+}
+else{
+continue;
 }
 }
 ?>

@@ -1,3 +1,13 @@
+<html>
+<head>
+<title>Professor's Login</title>
+</head>
+<body>
+<h1 align ="center"> Log-in For Professors</h1>
+
+
+
+
 <?php
 
 session_start();
@@ -35,21 +45,15 @@ continue;
 
 if (($username=="") && ($password==""))                          #This code takes care of  Correct display. just see the arrangements.
 {
-echo "Login To Continue";
+echo "<p align='center'>Login To Continue</p>";
 }
 else{
-echo "Unsuccessful Login. Please try again.";
+echo "<p align='center'>Unsuccessful Login. Please try again.</p>";
 }
 mysqli_close($con);
 ?>
 
 
-<html>
-<head>
-<title>Professor's Login</title>
-</head>
-<body>
-<h1 align ="center"> Log-in For Professors</h1>
 
 <form align="center" action="<?php $_PHP_SELF ?>" method="POST">
 Enter your ID and Password <br><br>

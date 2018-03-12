@@ -12,7 +12,8 @@ echo "Couldn't connect Database.";
 $sql='SELECT name,course from profs';
 $retval=mysqli_query($con,$sql);
                                                                   #Added all as session variables.
-
+#$sqlnew='SELECT name,course_picked from studs';
+#$retnew=mysqli_query($con,$sqlnew);
 
 ?>
 <html>
@@ -23,23 +24,53 @@ $retval=mysqli_query($con,$sql);
 <p>Available Courses are:</p>
 <?php
 
-while($row=mysqli_fetch_assoc($retval)){
-$course=$row['course'];
-echo " -->\t\t\t$course\n";
-}
+
 $id=$_SESSION['stud_id'];
 $name=$_SESSION['name'];
 $pass=$_SESSION['password'];
 $coursepick=$_SESSION['course_picked'];
 $timepick=$_SESSION['time_picked'];
-#echo "'$id','$name',$coursepick,$timepick";
-if ($_POST['courses']){
+
+while($row=mysqli_fetch_assoc($retval)){
+$course=$row['course'];
+#echo "navneel";
+if($course){
+echo " -->\t\t\t$course<br>";
+}
+}
+$retval=mysqli_query($con,$sql);
+while($row=mysqli_fetch_assoc($retval)){
+$course=$row['course'];
+#while($rownew=mysqli_fetch_assoc($retnew)){
+
+#$namenew=$rownew['name'];
+#$currcourse=$rownew['course_picked'];
+
+#if ($name==$namenew){
+
+if ($_POST['courses']=="$course" && $_POST['courses']==True){
 $newadd=$_POST['courses'];
 $addtime=time();
+
 $sql="Insert into studs values($id,'$pass','$name','$newadd','$addtime',NULL,NULL,$addtime)"; 
 #$sql="UPDATE studs "."SET course_picked='$newadd',time_picked='$addtime' "."WHERE name='$name'";
+echo"$newadd successfully added.<br>";
 $ret2=mysqli_query($con,$sql);
-}
+
+}  #if clause inside the biggest while loop
+
+else{
+continue;
+} #else clause inside biggest while loop
+
+#} #if name of session is equal to name of the user form stud database
+
+#} #newer while clause
+} #biggest while clause ends here
+
+
+
+
 ?>
 <br><br><br>
 <form action="<?php $_PHP_SELF ?>" method="POST">

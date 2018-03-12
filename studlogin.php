@@ -1,3 +1,16 @@
+<html>
+<head>
+<title>Student's Login</title>
+<style type="text/css">
+
+form{ float: center;}
+}
+
+</style>
+</head>
+<body>
+<h1 align ="center"> Log-in For Students</h1>
+
 <?php
 
 session_start();
@@ -35,26 +48,22 @@ continue;
 
 if (($username=="") && ($password==""))                          #This code takes care of  Correct display. just see the arrangements.
 {
-echo "Login To Continue";
+echo "<p align='center'>Login To Continue</p>";
 }
 else{
-echo "Unsuccessful Login. Please try again.";
+echo "<p align='center'>Unsuccessful Login. Please try again.</p>";
 }
 mysqli_close($con);
 ?>
 
 
-<html>
-<head>
-<title>Student's Login</title>
-</head>
-<body>
-<h1 align ="center"> Log-in For Students</h1>
-
-<form align="center" action="<?php $_PHP_SELF ?>" method="POST">
+<form action="<?php $_PHP_SELF ?>" method="POST">
 Enter your ID and Password <br><br>
-<input type='text' name="ID" value="Enter ID"><br>
+<input align="middle" type='text' name="ID" value="Enter ID"><br>
+<br>
 <input type='password' name="password" value="Enter password"><br>
+<br>
 <input type='submit' value="Log-In">
+
 </body>
 </html>
